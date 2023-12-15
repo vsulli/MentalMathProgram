@@ -25,10 +25,10 @@ class MyGUI:
 
         self.button = tk.Button(self.root, text="Show Message", font=('Arial', 18), command=self.show_message)
         self.button.pack(padx=10, pady=10)
-        '''
+        
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.root.mainloop()
-        '''
+        
         
     def show_message(self):
         # get state of check box
@@ -43,8 +43,8 @@ class MyGUI:
             self.show_message()
 
     def on_closing(self):
-        print("Hello World")
-        self.root.destroy()
+        if messagebox.askyesno(title="Quit?", message="Do you really want to quit?"):
+            self.root.destroy()
 
 
 MyGUI()
