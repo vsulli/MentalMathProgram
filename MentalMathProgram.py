@@ -15,6 +15,7 @@ class MyGUI:
         self.label.pack(padx=10, pady=10)
 
         self.textbox = tk.Text(self.root, height=5, font=('Arial', 16))
+        self.textbox.bind("<KeyPress>", self.shortcut)
         self.textbox.pack(padx=10, pady=10)
 
         self.check_state = tk.IntVar()
@@ -35,6 +36,11 @@ class MyGUI:
         else:
             messagebox.showinfo(title="Message", message=self.textbox.get('1.0', tk.END))
        
+    def shortcut(self, event):
+        if event.state == 12 and event.keysym == "Return":
+            self.show_message()
+
+
 MyGUI()
 
 # menu
