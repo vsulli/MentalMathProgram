@@ -4,6 +4,7 @@
 # 13 December 2023
 
 import tkinter as tk
+from tkinter import messagebox
 
 class MyGUI:
 
@@ -23,12 +24,17 @@ class MyGUI:
 
         self.button = tk.Button(self.root, text="Show Message", font=('Arial', 18), command=self.show_message)
         self.button.pack(padx=10, pady=10)
-        
+
         self.root.mainloop()
 
     def show_message(self):
-        print("Hello World")
-
+        # get state of check box
+        if self.check_state.get() == 0:
+            # get everything in box
+            print(self.textbox.get('1.0', tk.END))
+        else:
+            messagebox.showinfo(title="Message", message=self.textbox.get('1.0', tk.END))
+       
 MyGUI()
 
 # menu
