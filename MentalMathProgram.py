@@ -50,6 +50,10 @@ btn6.grid(row=1, column=2, sticky=tk.W+tk.E)
 
 buttonframe.pack(fill='x')
 
+anotherbtn = tk.Button(root, text="Test")
+anotherbtn.place(x=200, y=200, height=100, width=100)
+
+
 root.mainloop()
 
 # menu
