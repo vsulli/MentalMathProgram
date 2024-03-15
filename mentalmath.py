@@ -20,6 +20,7 @@ def main():
             # Addition
             if sel_1 == 1:
                 pass
+
             # Subtraction
             elif sel_1 == 2:
                 pass
@@ -38,6 +39,7 @@ def main():
 
             elif sel_1 == 6:
                 return
+            
         sel_1 = input()
 
 
