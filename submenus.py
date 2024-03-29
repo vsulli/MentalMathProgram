@@ -9,14 +9,21 @@ def digit_sel()->list[int]:
     match = r'(\d+, \d+)' 
     sel = re.findall(match, prompt)
     if sel:
-        print(type(sel))
-       # sel.replace(" ", "")
-       # digits = sel.split(',')
-       # print(digits)
-    return digits
+        sel[0].replace(" ", "")
+        digits = sel[0].split(',')
+    # turns digits to int
+    return [int(i) for i in digits]
     
 
 def addition(d1, d2):
-    pass
+    prompt = input(str(d1) + ' + ' + str(d2)+'\n')
+    match = r'\d+'
+    sel = re.findall(match, prompt)
+    if sel[0]:
+        if int(sel[0]) == d1 + d2:
+            print('Correct\n')
+        else:
+            print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
 
-digit_sel()
+
+addition(2, 1)
