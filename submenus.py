@@ -24,5 +24,3 @@ def addition(d1, d2):
             print('Correct\n')
         else:
             print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
-
-addition(2, 1)

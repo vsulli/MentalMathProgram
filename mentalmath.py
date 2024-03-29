@@ -20,32 +20,38 @@ def main():
     print('\n Please enter a selection: ')
 
     sel_1 = input()
-    while not sel_1.isdigit():
-        print('Please enter a valid int.')
+    while sel_1 != 6:
+        if not sel_1.isdigit() or int(sel_1) not in range(1,7):
+            print('Please enter a valid int.')
+            return
+
+        if sel_1.isdigit():
+            sel_1 = int(sel_1)
+
+        # Addition
+        elif sel_1 == 1:
+            print('here')
+            nums = submenus.digit_sel()
+            # print(nums)
+
+        # Subtraction
+        elif sel_1 == 2:
+            pass
+
+        # Multiplication
+        elif sel_1 == 3:
+            pass
         
-        while sel_1 in range(1,7):
-            # Addition
-            if sel_1 == 1:
-                pass
+        # Division
+        elif sel_1 == 4:
+            pass
 
-            # Subtraction
-            elif sel_1 == 2:
-                pass
+        # Records
+        elif sel_1 == 5:
+            pass 
 
-            # Multiplication
-            elif sel_1 == 3:
-                pass
-            
-            # Division
-            elif sel_1 == 4:
-                pass
-
-            # Records
-            elif sel_1 == 5:
-                pass 
-
-            elif sel_1 == 6:
-                return
+        elif sel_1 == 6:
+            return
             
         sel_1 = input()
 
