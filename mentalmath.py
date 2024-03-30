@@ -7,11 +7,6 @@ problems
 
 import submenus
 
-#total questions practiced
-tot_q = 0
-# correct count
-correct = 0
-
 def main():
     menu = ("1) Addition\n2) Subtraction\n" +  
     "3) Multiplication\n4) Division\n5) Records\n6) Quit")
