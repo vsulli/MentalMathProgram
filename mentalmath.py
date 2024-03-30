@@ -31,7 +31,8 @@ def main():
         # Addition
         if sel_1 == 1:
             nums = submenus.digit_sel()
-            print(nums)
+            submenus.addition(nums[0], nums[1])
+            print(menu)
 
         # Subtraction
         if sel_1 == 2:

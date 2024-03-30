@@ -16,11 +16,15 @@ def digit_sel()->list[int]:
     
 
 def addition(d1, d2):
-    prompt = input(str(d1) + ' + ' + str(d2)+'\n')
-    match = r'\d+'
-    sel = re.findall(match, prompt)
-    if sel[0]:
-        if int(sel[0]) == d1 + d2:
-            print('Correct\n')
-        else:
-            print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
+    prompt = ''
+    while prompt.lower() != 'q':
+        prompt = input(str(d1) + ' + ' + str(d2)+'\n')
+        match = r'\d+'
+        sel = re.findall(match, prompt)
+        if prompt == 'q':
+            return
+        elif sel[0]:
+            if int(sel[0]) == d1 + d2:
+                print('Correct\n')
+            else:
+                print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
