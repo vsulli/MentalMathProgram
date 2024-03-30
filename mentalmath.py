@@ -23,34 +23,33 @@ def main():
     while sel_1 != 6:
         if not sel_1.isdigit() or int(sel_1) not in range(1,7):
             print('Please enter a valid int.')
-            return
+            pass
 
         if sel_1.isdigit():
             sel_1 = int(sel_1)
 
         # Addition
-        elif sel_1 == 1:
-            print('here')
+        if sel_1 == 1:
             nums = submenus.digit_sel()
-            # print(nums)
+            print(nums)
 
         # Subtraction
-        elif sel_1 == 2:
+        if sel_1 == 2:
             pass
 
         # Multiplication
-        elif sel_1 == 3:
+        if sel_1 == 3:
             pass
         
         # Division
-        elif sel_1 == 4:
+        if sel_1 == 4:
             pass
 
         # Records
-        elif sel_1 == 5:
+        if sel_1 == 5:
             pass 
 
-        elif sel_1 == 6:
+        if sel_1 == 6:
             return
             
         sel_1 = input()
