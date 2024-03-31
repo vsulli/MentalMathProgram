@@ -1,4 +1,5 @@
 import classes
+import random
 import re
 import time
 
@@ -19,8 +20,8 @@ def digit_sel()->list[int]:
         digits = sel[0].split(',')
     # turns digits to int
     return [int(i) for i in digits]
-    
 
+        
 def addition(d1, d2):
     prompt = ''
     while prompt.lower() != 'q':
@@ -32,7 +33,7 @@ def addition(d1, d2):
         if prompt == 'q':
             print('Qs: ' + str(user.q)+'\n'+
                   'Correct: ' + str(user.c)+'\n'+
-                  str(round(user.c / user.q*100, 2))+'%')
+                  str(round(user.c / user.q*100, 2))+'%\n')
             
             return
         elif sel[0]:
@@ -43,3 +44,18 @@ def addition(d1, d2):
                 print('Correct\n')
             else:
                 print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
+
+
+def generate_rand_nums(digit_list)->list[int]:
+     # TODO generate range of numbers
+    for i in range(2):
+        # single digit 0-9
+        if digit_list[i] == 1:
+            digit_list[i] = random.randrange(0,10)
+        # all other numbers
+        else:
+            digit_list[i] = random.randrange(10**(digit_list[i] - 1), 10**digit_list[i])
+    return digit_list
+
+
+print(generate_rand_nums([2, 1]))
