@@ -1,7 +1,13 @@
 # MENTAL MATH PROGRAM
 
-Format
-records.txt
+# TODO LIST
+- fix timer for submenu
+- add subtraction
+- add multiplication
+- add division
+- add try/catch - error handling
+- add user selection
+- format records.txt
 
 category; time; problem; digits_1; digits_2
 * of digits in first number, # of digits in 2nd number
