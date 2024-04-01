@@ -25,3 +25,7 @@ category; time; problem; digits_1; digits_2
     10-99
     generate random number in this range(10^(digit - 1),(10^digit))
     * don't need -1 for second digit because python doesn't include last number in range anyway
+
+    * Fixing the timer
+    https://diveintopython.org/learn/date/time
+    Have to create a timer module?

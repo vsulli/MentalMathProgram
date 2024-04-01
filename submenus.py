@@ -29,7 +29,7 @@ def addition(d1, d2):
         user.q += 1
         match = r'\d+'
         sel = re.findall(match, prompt)
-        start_time = time.clock()
+        start_time = time.time()
         if prompt == 'q':
             print('Qs: ' + str(user.q)+'\n'+
                   'Correct: ' + str(user.c)+'\n'+
@@ -37,8 +37,8 @@ def addition(d1, d2):
             
             return
         elif sel[0]:
-            stop_time = time.clock()
-            print(f"Time: {stop_time - start_time} secs")
+            stop_time = time.time()
+            print(f"Time: {(stop_time - start_time):.4f} secs")
             if int(sel[0]) == d1 + d2:
                 user.c += 1
                 print('Correct\n')
@@ -57,3 +57,8 @@ def gen_rand_nums(digit_list)->list[int]:
     return digit_list
 
 
+start = time.time()
+for i in range(100):
+    print(i)
+end = time.time()
+print(f"Time: {(stop_time - start_time):.4f} secs")
