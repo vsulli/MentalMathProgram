@@ -1,7 +1,7 @@
 import classes
 import random
 import re
-import time
+from timeit import default_timer as timer
 
 # create function to create/ select user
 # load from file
@@ -29,7 +29,7 @@ def addition(d1, d2):
         user.q += 1
         match = r'\d+'
         sel = re.findall(match, prompt)
-        start_time = time.time()
+        start_time = timer()
         if prompt == 'q':
             print('Qs: ' + str(user.q)+'\n'+
                   'Correct: ' + str(user.c)+'\n'+
@@ -37,8 +37,8 @@ def addition(d1, d2):
             
             return
         elif sel[0]:
-            stop_time = time.time()
-            print(f"Time: {(stop_time - start_time):.4f} secs")
+            stop_time = timer()
+            print("Time: " + str(stop_time - start_time) + " secs")
             if int(sel[0]) == d1 + d2:
                 user.c += 1
                 print('Correct\n')
@@ -56,9 +56,3 @@ def gen_rand_nums(digit_list)->list[int]:
             digit_list[i] = random.randrange(10**(digit_list[i] - 1), 10**digit_list[i])
     return digit_list
 
-
-start = time.time()
-for i in range(100):
-    print(i)
-end = time.time()
-print(f"Time: {(stop_time - start_time):.4f} secs")
