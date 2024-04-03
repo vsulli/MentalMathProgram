@@ -2,6 +2,8 @@ import classes
 import random
 import re
 import time
+from datetime import datetime
+
 
 # create function to create/ select user
 # load from file
@@ -25,11 +27,14 @@ def digit_sel()->list[int]:
 def addition(d1, d2):
     prompt = ''
     while prompt.lower() != 'q':
+        global start_time
+        start_time = datetime.now()
+        print(start_time)
         prompt = input(str(d1) + ' + ' + str(d2)+'\n')
         user.q += 1
         match = r'\d+'
         sel = re.findall(match, prompt)
-        start_time = time.time()
+
         if prompt == 'q':
             print('Qs: ' + str(user.q)+'\n'+
                   'Correct: ' + str(user.c)+'\n'+
@@ -37,14 +42,16 @@ def addition(d1, d2):
             
             return
         elif sel[0]:
-            stop_time = time.time()
+            global stop_time
+            stop_time = datetime.now()
+            print(stop_time)
             print("Time: " + str(stop_time - start_time) + " secs")
             if int(sel[0]) == d1 + d2:
                 user.c += 1
                 print('Correct\n')
             else:
                 print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
-
+                
 
 def gen_rand_nums(digit_list)->list[int]:
     for i in range(2):
@@ -56,7 +63,9 @@ def gen_rand_nums(digit_list)->list[int]:
             digit_list[i] = random.randrange(10**(digit_list[i] - 1), 10**digit_list[i])
     return digit_list
 
+'''
 start = time.time()
 test = input('Test: ')
 print(test)
 print(time.time() - start)
+'''
