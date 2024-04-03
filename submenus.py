@@ -3,6 +3,7 @@ import random
 import re
 import time
 
+DIGITS = []
 
 # create function to create/ select user
 # load from file
@@ -23,12 +24,20 @@ def digit_sel()->list[int]:
     return [int(i) for i in digits]
 
         
-def addition(d1, d2):
+def addition():
     prompt = ''
+    DIGITS = digit_sel()
+    print(DIGITS)
+
     while prompt.lower() != 'q':
+
+        # generate random number with desired # digits
+        nums = gen_rand_nums(DIGITS)
+        print(DIGITS)
         global start_time
         start_time = time.time()
-        prompt = input(str(d1) + ' + ' + str(d2)+'\n')
+
+        prompt = input(str(nums[0]) + ' + ' + str(nums[1])+'\n')
         user.q += 1
         match = r'\d+'
         sel = re.findall(match, prompt)
@@ -43,11 +52,11 @@ def addition(d1, d2):
             global stop_time
             stop_time = time.time()
             print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
-            if int(sel[0]) == d1 + d2:
+            if int(sel[0]) == nums[0] + nums[1]:
                 user.c += 1
                 print('Correct\n')
             else:
-                print('Wrong\nCorrect Answer: ' + str(d1 + d2) + '\n')
+                print('Wrong\nCorrect Answer: ' + str(nums[0] + nums[1]) + '\n')
 
 
 def gen_rand_nums(digit_list)->list[int]:
@@ -58,4 +67,6 @@ def gen_rand_nums(digit_list)->list[int]:
         # all other numbers
         else:
             digit_list[i] = random.randrange(10**(digit_list[i] - 1), 10**digit_list[i])
+    # returns 2 random numbers
     return digit_list
+
