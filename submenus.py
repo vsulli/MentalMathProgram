@@ -71,6 +71,7 @@ def math_operation(symbol):
                   'Correct: ' + str(user.c)+'\n'+
                   str(round(user.c / user.q*100, 2))+'%')
             print('==========================')
+
             # reset values
             user.c = 0
             user.q = 0
@@ -82,7 +83,7 @@ def math_operation(symbol):
             print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
             
             # correct answer
-            # for division need to check if it's within 1 decimal point?
+            # for division need to check if matches rounded to 1 decimal point
             if (int(sel[0]) == correct_ans or 
                 (symbol == '-' and -int(sel[0]) == correct_ans) or
                 (symbol == '/' and (sel[0]) == round(correct_ans, 1))):
