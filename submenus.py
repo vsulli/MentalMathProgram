@@ -57,7 +57,7 @@ def math_operation(symbol):
             prompt = input(str(nums[0]) + ' x ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] * nums[1]
         elif symbol == '/':
-            prompt = input(str(nums[0]) + ' /' + str(nums[1]) + ' = \n')
+            prompt = input(str(nums[0]) + ' / ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] / nums[1]
 
         match = r'\d+'
@@ -80,10 +80,7 @@ def math_operation(symbol):
             print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
             
             # correct answer
-            if (symbol == '+' and int(sel[0]) == correct_ans or
-            symbol == '-' and int(sel[0]) == correct_ans or
-            symbol == 'x' and int(sel[0]) == correct_ans or 
-            symbol == '/' and int(sel[0]) == correct_ans):
+            if (int(sel[0]) == correct_ans):
                 user.c += 1
                 user.q += 1
                 print('Correct')
@@ -95,46 +92,3 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
-
-'''
-def addition():
-    prompt = ''
-    digits = []
-    digits = digit_sel()
-
-    while prompt.lower() != 'q':
-
-        # generate random number with desired # digits
-        nums = gen_rand_nums(digits)
-        global start_time
-        start_time = time.time()
-
-        prompt = input(str(nums[0]) + ' + ' + str(nums[1])+' = \n')
-        match = r'\d+'
-        sel = re.findall(match, prompt)
-
-        if prompt.lower() == 'q':
-            print('==========================')
-            print('Qs: ' + str(user.q)+'\n'+
-                  'Correct: ' + str(user.c)+'\n'+
-                  str(round(user.c / user.q*100, 2))+'%')
-            print('==========================')
-            # reset values
-            user.c = 0
-            user.q = 0
-            return
-        elif sel[0]:
-            global stop_time
-            stop_time = time.time()
-            print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
-            if int(sel[0]) == nums[0] + nums[1]:
-                user.c += 1
-                user.q += 1
-                print('Correct')
-                print('-----------------------')
-            else:
-                user.q += 1
-                print('Wrong\nCorrect Answer: ' + str(nums[0] + nums[1]))
-                print('-----------------------')
-
-'''
