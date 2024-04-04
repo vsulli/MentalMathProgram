@@ -60,7 +60,8 @@ def math_operation(symbol):
         elif symbol == '/':
             prompt = input(str(nums[0]) + ' / ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] / nums[1]
-
+        # TODO - change the match for division and subtraction?
+        # which position is - symbol and parts of value in ans = 4.5 or ans= -2
         match = r'\d+'
         sel = re.findall(match, prompt)
 
@@ -81,7 +82,10 @@ def math_operation(symbol):
             print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
             
             # correct answer
-            if (int(sel[0]) == correct_ans or (symbol == '-' and -int(sel[0]) == correct_ans)):
+            # for division need to check if it's within 1 decimal point?
+            if (int(sel[0]) == correct_ans or 
+                (symbol == '-' and -int(sel[0]) == correct_ans) or
+                (symbol == '/' and (sel[0]) == round(correct_ans, 1))):
                 user.c += 1
                 user.q += 1
                 print('Correct')

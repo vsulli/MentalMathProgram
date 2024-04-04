@@ -35,3 +35,9 @@ category; time; problem; digits_1; digits_2
     * Need to change  it to allow for negative numbers in the same range
     - will have to adjust check for correct response
     - currently subtraction is just taking the opposite of the entry to check
+
+    * for division - need to check if answer given is within one decimal place of correct answer (rounded)
+
+    * for division - need to make sure you don't divide by 0
+    * eventually add logarithms and exponents
+    * add TTS voice for speaking problem
