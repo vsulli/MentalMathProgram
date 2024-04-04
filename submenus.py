@@ -36,7 +36,7 @@ def gen_rand_nums(digit_list)->list[int]:
 
 def math_operation(symbol):
     prompt = ''
-    correct_ans = 0 # change to none type to start?
+    correct_ans = None # change to none type to start?
     digits = []
     digits = digit_sel()
 
@@ -93,9 +93,10 @@ def math_operation(symbol):
             else:
                 user.q += 1
                 print('Wrong')
-                print('Correct Answer: ' + str(nums[0] + nums[1]))
+                print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
 
+'''
 def addition():
     prompt = ''
     digits = []
@@ -136,4 +137,4 @@ def addition():
                 print('Wrong\nCorrect Answer: ' + str(nums[0] + nums[1]))
                 print('-----------------------')
 
-
+'''

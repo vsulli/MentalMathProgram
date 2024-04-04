@@ -25,7 +25,8 @@ def main():
 
         # Addition
         if sel_1 == 1:
-            submenus.addition()
+            submenus.math_operation('+')
+            #submenus.addition()
             print(menu)
 
         # Subtraction
