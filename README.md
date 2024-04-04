@@ -29,3 +29,5 @@ category; time; problem; digits_1; digits_2
     * Fixing the timer
     https://diveintopython.org/learn/date/time
     Have to create a timer module?
+
+    Selecting number of digits - DIGITS gets reset every time through loop
