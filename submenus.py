@@ -20,8 +20,20 @@ def digit_sel()->list[int]:
         digits = sel[0].split(',')
     # turns digits to int
     return [int(i) for i in digits]
+ 
+def gen_rand_nums(digit_list)->list[int]:
+    # make a copy of digits selected
+    copy_list = list(digit_list)
+    for i in range(2):
+        # single digit 0-9
+        if copy_list[i] == 1:
+            copy_list[i] = random.randrange(0,10)
+        # all other numbers
+        else:
+            copy_list[i] = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i])
+    # returns 2 random numbers
+    return copy_list 
 
-        
 def addition():
     prompt = ''
     digits = []
@@ -61,18 +73,4 @@ def addition():
                 user.q += 1
                 print('Wrong\nCorrect Answer: ' + str(nums[0] + nums[1]))
                 print('-----------------------')
-
-
-def gen_rand_nums(digit_list)->list[int]:
-    # make a copy of digits selected
-    copy_list = list(digit_list)
-    for i in range(2):
-        # single digit 0-9
-        if copy_list[i] == 1:
-            copy_list[i] = random.randrange(0,10)
-        # all other numbers
-        else:
-            copy_list[i] = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i])
-    # returns 2 random numbers
-    return copy_list
 
