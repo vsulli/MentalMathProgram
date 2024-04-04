@@ -26,20 +26,22 @@ def main():
         # Addition
         if sel_1 == 1:
             submenus.math_operation('+')
-            #submenus.addition()
             print(menu)
 
         # Subtraction
         if sel_1 == 2:
-            pass
+            submenus.math_operation('-')
+            print(menu)
 
         # Multiplication
         if sel_1 == 3:
-            pass
+            submenus.math_operation('x')
+            print(menu)
         
         # Division
         if sel_1 == 4:
-            pass
+            submenus.math_operation('/')
+            print(menu)
 
         # Records
         if sel_1 == 5:

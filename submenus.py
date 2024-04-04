@@ -47,6 +47,7 @@ def math_operation(symbol):
         global start_time
         start_time = time.time()
 
+        #TODO input validation for letters
         if symbol == '+':
             prompt = input(str(nums[0]) + ' + ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] + nums[1]
@@ -80,7 +81,7 @@ def math_operation(symbol):
             print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
             
             # correct answer
-            if (int(sel[0]) == correct_ans):
+            if (int(sel[0]) == correct_ans or -int(sel[0]) == correct_ans):
                 user.c += 1
                 user.q += 1
                 print('Correct')

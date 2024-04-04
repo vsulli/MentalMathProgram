@@ -31,3 +31,7 @@ category; time; problem; digits_1; digits_2
     Have to create a timer module?
 
     Selecting number of digits - DIGITS gets reset every time through loop
+
+    * Need to change  it to allow for negative numbers in the same range
+    - will have to adjust check for correct response
+    - currently subtraction is just taking the opposite of the entry to check
