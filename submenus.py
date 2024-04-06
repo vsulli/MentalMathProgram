@@ -63,9 +63,10 @@ def math_operation(symbol):
         # TODO - change the match for division and subtraction?
         # which position is - symbol and parts of value in ans = 4.5 or ans= -2
         
-        match = r'\d+'
+        # matches negative number | negative number.number | number | number.number
+        match = r'-\d+|-\d+.\d+|\d+|\d+.\d+'
         sel = re.findall(match, prompt)
-
+        print(sel)
         if prompt.lower() == 'q':
             print('==========================')
             print('Qs: ' + str(user.q)+'\n'+
@@ -85,9 +86,7 @@ def math_operation(symbol):
             
             # correct answer
             # for division need to check if matches rounded to 1 decimal point
-            if (int(sel[0]) == correct_ans or 
-                (symbol == '-' and -int(sel[0]) == correct_ans) or
-                (symbol == '/' and (sel[0]) == round(correct_ans, 1))):
+            if (float(sel[0]) == correct_ans or (round(sel[0]), 1) == round(correct_ans, 1)):
                 user.c += 1
                 user.q += 1
                 print('Correct')
@@ -99,3 +98,5 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
+
+
