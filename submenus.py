@@ -24,13 +24,28 @@ def digit_sel()->list[int]:
 def gen_rand_nums(digit_list)->list[int]:
     # make a copy of digits selected
     copy_list = list(digit_list)
+    rand_num = 0
+
     for i in range(2):
         # single digit 0-9
         if copy_list[i] == 1:
-            copy_list[i] = random.randrange(0,10)
+            # can't have division by 0
+            if i == 2:
+                while(rand_num == 0):
+                    rand_num = random.randrange(0,10)
+                copy_list[i] = rand_num 
+            else:
+                rand_num = random.randrange(0,10)
+                copy_list[i] = rand_num
         # all other numbers
         else:
-            copy_list[i] = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i])
+            if i == 2:
+                while(rand_num == 0):
+                   rand_num = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i])
+                copy_list[i] = rand_num
+            else:
+                random.randrange(10**(copy_list[i] - 1), 10**copy_list[i]) 
+                copy_list[i] = rand_num
     # returns 2 random numbers
     return copy_list 
 
@@ -64,7 +79,7 @@ def math_operation(symbol):
         # which position is - symbol and parts of value in ans = 4.5 or ans= -2
         
         # matches negative number | negative number.number | number | number.number
-        match = r'-\d+|-\d+.\d+|\d+|\d+.\d+'
+        match = r"[-+]?\d*\.?\d+|[-+]?\d+"
         sel = re.findall(match, prompt)
         print(sel)
         if prompt.lower() == 'q':
@@ -86,7 +101,7 @@ def math_operation(symbol):
             
             # correct answer
             # for division need to check if matches rounded to 1 decimal point
-            if (float(sel[0]) == correct_ans or (round(sel[0]), 1) == round(correct_ans, 1)):
+            if (float(sel[0]) == correct_ans or (round(float(sel[0])), 1) == round(correct_ans, 1)):
                 user.c += 1
                 user.q += 1
                 print('Correct')
@@ -100,3 +115,5 @@ def math_operation(symbol):
                 print('-----------------------')
 
 
+for x in range(10):
+    print(gen_rand_nums([1,1]))
