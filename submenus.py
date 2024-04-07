@@ -28,24 +28,20 @@ def gen_rand_nums(digit_list)->list[int]:
 
     for i in range(2):
         # single digit 0-9
+
         if copy_list[i] == 1:
-            # can't have division by 0
-            if i == 2:
+            # can't have division by 0 in 2nd position
+            if i == 1:
                 while(rand_num == 0):
-                    rand_num = random.randrange(0,10)
+                    rand_num = random.randrange(1,10)
                 copy_list[i] = rand_num 
             else:
                 rand_num = random.randrange(0,10)
                 copy_list[i] = rand_num
         # all other numbers
         else:
-            if i == 2:
-                while(rand_num == 0):
-                   rand_num = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i])
-                copy_list[i] = rand_num
-            else:
-                random.randrange(10**(copy_list[i] - 1), 10**copy_list[i]) 
-                copy_list[i] = rand_num
+            copy_list[i] = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i]) 
+
     # returns 2 random numbers
     return copy_list 
 
@@ -113,7 +109,3 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
-
-
-for x in range(10):
-    print(gen_rand_nums([1,1]))
