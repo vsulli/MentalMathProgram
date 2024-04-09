@@ -27,14 +27,15 @@ def gen_rand_nums(digit_list)->list[int]:
     rand_num = 0
 
     for i in range(2):
-        # single digit 0-9
+        # single digit  -9 -> 9 excluding 0
         if copy_list[i] == 1:
             # can't have division by 0 in 2nd position
             if i == 1:
-                rand_num = random.randrange(1,10)
-                copy_list[i] = rand_num 
+                while rand_num == 0:
+                    rand_num = random.randrange(-9,9)
+                    copy_list[i] = rand_num 
             else:
-                rand_num = random.randrange(0,10)
+                rand_num = random.randrange(-9,9)
                 copy_list[i] = rand_num
         # all other numbers
         else:
