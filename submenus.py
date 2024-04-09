@@ -33,7 +33,7 @@ def gen_rand_nums(digit_list)->list[int]:
             if i == 1:
                 while rand_num == 0:
                     rand_num = random.randrange(-9,9)
-                    copy_list[i] = rand_num 
+                copy_list[i] = rand_num 
             else:
                 rand_num = random.randrange(-9,9)
                 copy_list[i] = rand_num
