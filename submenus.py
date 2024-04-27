@@ -28,7 +28,7 @@ def gen_rand_nums(digit_list)->list[int]:
 
     for i in range(2):
         # single digit  -9 -> 9 excluding 0
-        if copy_list[i] == 1:
+        if digit_list[i] == 1: # need to check digit_list not copy_list?
             # can't have division by 0 in 2nd position
             if i == 1:
                 while rand_num == 0:
@@ -106,4 +106,7 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
+
+# currently keeping first numbe the same as second
+print(gen_rand_nums([1, 1]))
 
