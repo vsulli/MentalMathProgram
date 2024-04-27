@@ -28,7 +28,7 @@ def gen_rand_nums(digit_list)->list[int]:
 
     for i in range(2):
         # single digit  -9 -> 9 excluding 0
-        if digit_list[i] == 1: # need to check digit_list not copy_list?
+        if digit_list[i] == 1:
             # can't have division by 0 in 2nd position
             if i == 1:
                 while rand_num == 0:
@@ -37,6 +37,8 @@ def gen_rand_nums(digit_list)->list[int]:
             else:
                 rand_num = random.randrange(-9,9)
                 copy_list[i] = rand_num
+            # have to reset rand_num 
+            rand_num = 0
         # all other numbers
         else:
             copy_list[i] = random.randrange(10**(copy_list[i] - 1), 10**copy_list[i]) 
@@ -106,7 +108,4 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
-
-# currently keeping first numbe the same as second
-print(gen_rand_nums([1, 1]))
 
