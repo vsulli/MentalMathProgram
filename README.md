@@ -41,3 +41,5 @@ category; time; problem; digits_1; digits_2
     * for division - need to make sure you don't divide by 0
     * eventually add logarithms and exponents
     * add TTS voice for speaking problem
+
+    TODO: fix random numbers for multiplication
