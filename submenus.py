@@ -76,7 +76,6 @@ def math_operation(symbol):
         # matches negative number | negative number.number | number | number.number
         match = r"[-+]?\d*\.?\d+|[-+]?\d+"
         sel = re.findall(match, prompt)
-        print(sel)
         if prompt.lower() == 'q':
             print('==========================')
             print('Qs: ' + str(user.q)+'\n'+

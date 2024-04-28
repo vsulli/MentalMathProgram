@@ -43,3 +43,5 @@ category; time; problem; digits_1; digits_2
     * add TTS voice for speaking problem
 
     TODO: fix random numbers for multiplication
+    - fix digit selection (1, a) gives error
+    
