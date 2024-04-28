@@ -95,6 +95,7 @@ def math_operation(symbol):
             
             # correct answer
             # for division need to check if matches rounded to 1 decimal point
+            # TODO check this line - may not be getting correct selection with sel[0]?
             if (float(sel[0]) == correct_ans or (round(float(sel[0])), 1) == round(correct_ans, 1)):
                 user.c += 1
                 user.q += 1
@@ -107,4 +108,3 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
-
