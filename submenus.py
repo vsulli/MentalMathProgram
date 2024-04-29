@@ -15,10 +15,14 @@ def digit_sel()->list[int]:
     
     match = r'(\d+, \d+)' 
     sel = re.findall(match, prompt)
-    if sel:
-        sel[0].replace(" ", "")
-        digits = sel[0].split(',')
-    # turns digits to int
+    try:
+        if sel:
+            sel[0].replace(" ", "")
+            digits = sel[0].split(',')
+        # turns digits to int
+    except:
+        print("Invalid Format")
+        
     return [int(i) for i in digits]
  
 def gen_rand_nums(digit_list)->list[int]:
