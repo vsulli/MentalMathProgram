@@ -5,7 +5,6 @@ import time
 
 # create function to create/ select user
 # load from file
-user = classes.User('parosomniac', 0, 0)
 
 # return a list
 def digit_sel()->list[int]:
