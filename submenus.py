@@ -96,7 +96,7 @@ def math_operation(symbol):
             global stop_time
             stop_time = time.time()
             print("Time: " + str(round(stop_time - start_time, 2)) + " secs")
-            
+
             # correct answer
             # for division need to check if matches rounded to 1 decimal point
             # TODO check this line - may not be getting correct selection with sel[0]?
