@@ -44,5 +44,19 @@ category; time; problem; digits_1; digits_2
 
     TODO: fix random numbers for multiplication
     - fix digit selection (1, a) gives error
-    - add in try, catch - error handling
+    - add in try, catch - error handling - make it so only number submissions accepted
+    - add GUI
     
+    Records
+    Shelve - key is a string and data is any arbitrary object
+    https://docs.python.org/3/library/shelve.html
+    * using a temp variable is faster and uses less memory than opening dict using writeback = True
+
+    - store fastest times for each operation and number of digits
+    addition
+    1x1
+    1x2 equivalent to 2x1
+    2x2 etc. 
+    subtraction
+    multiplication
+    division

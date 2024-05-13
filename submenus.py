@@ -1,6 +1,7 @@
 import classes
 import random
 import re
+import shelve
 import time
 
 # create function to create/ select user
@@ -112,3 +113,16 @@ def math_operation(symbol):
                 print('Wrong')
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
+
+def modify_record(file, key, value):
+
+    record_dict = shelve.open(file) 
+    #when you open dict without writeback=True, have to do the following:
+    temp = record_dict[key]             # extracts the copy
+    temp.append(value)             # mutates the copy
+    record_dict[key] = temp             # stores the copy right back, to persist it
+    record_dict.close()
+
+def retrieve_record(file):
+    record_dict = shelve.open(file)
+
