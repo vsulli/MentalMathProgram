@@ -115,8 +115,11 @@ def math_operation(symbol):
                 print('-----------------------')
 
 def modify_record(file, key, value):
-
     record_dict = shelve.open(file) 
+    curr_val = record_dict[key]
+    # don't update if current record exists and has lower time
+    if curr_val[0] and curr_val[0] < value[0]:
+        return
     #when you open dict without writeback=True, have to do the following:
     temp = record_dict[key]             # extracts the copy
     temp.append(value)             # mutates the copy
