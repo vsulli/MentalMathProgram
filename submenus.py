@@ -65,16 +65,16 @@ def math_operation(symbol):
         start_time = time.time()
 
         #TODO input validation for letters
-        if symbol == '+':
+        if symbol == 'A':
             prompt = input(str(nums[0]) + ' + ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] + nums[1]
-        elif symbol == '-':
+        elif symbol == 'S':
             prompt = input(str(nums[0]) + ' - ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] - nums[1]
-        elif symbol == 'x':
+        elif symbol == 'M':
             prompt = input(str(nums[0]) + ' x ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] * nums[1]
-        elif symbol == '/':
+        elif symbol == 'D':
             prompt = input(str(nums[0]) + ' / ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] / nums[1]
         
@@ -91,6 +91,7 @@ def math_operation(symbol):
             # reset values
             user.c = 0
             user.q = 0
+
             return
         
         elif sel[0]:
@@ -106,6 +107,14 @@ def math_operation(symbol):
                 user.q += 1
                 print('Correct')
                 print('-----------------------')
+
+                sorted_digits = sorted(digits)
+                # A1,2
+                d_key = symbol + str(sorted_digits[0])+',' + str(sorted_digits[1])
+                # compare run to best time
+                # file, key, value[time, n1, n2]
+                modify_record('records.txt', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
+
             
             # incorrect answer
             else:
@@ -126,6 +135,9 @@ def modify_record(file, key, value):
     record_dict[key] = temp             # stores the copy right back, to persist it
     record_dict.close()
 
-def retrieve_record(file):
+def retrieve_record(file, key):
     record_dict = shelve.open(file)
+    record = record_dict[key]
+    print(record)
+    record_dict.close()
 

@@ -25,28 +25,28 @@ def main():
 
         # Addition
         if sel_1 == 1:
-            submenus.math_operation('+')
+            submenus.math_operation('A')
             print(menu)
 
         # Subtraction
         if sel_1 == 2:
-            submenus.math_operation('-')
+            submenus.math_operation('S')
             print(menu)
 
         # Multiplication
         if sel_1 == 3:
-            submenus.math_operation('x')
+            submenus.math_operation('M')
             print(menu)
         
         # Division
         if sel_1 == 4:
-            submenus.math_operation('/')
+            submenus.math_operation('D')
             print(menu)
 
         # Records
         if sel_1 == 5:
-            pass 
-
+            submenus.retrieve_record('records.txt', 'A1,2') 
+            print(menu)
         if sel_1 == 6:
             return
             

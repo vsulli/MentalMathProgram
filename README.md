@@ -54,7 +54,7 @@ category; time; problem; digits_1; digits_2
 
 keys: A , S, M, D
 (if multiple digits, sort in ascending order - 1, 2  or 2, 1 for addition -> 'A1,2')
-value: list [time, n1, n2]
+value: list [time, num1, num2]
 
     - store fastest times for each operation and number of digits
 
