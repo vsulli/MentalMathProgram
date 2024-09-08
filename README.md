@@ -68,3 +68,19 @@ value: list [time, num1, num2]
     subtraction
     multiplication
     division
+
+# store digits in order of highest to lowest?
+hashmap of user_records
+
+username_add: [[digit_1,digit_2, fastest_time, date_achieved], [digit_1, digit_2, fastest_time, date_achieved]]
+username_sub:
+username_multi:
+username_div: 
+
+* from datetime import datetime
+current_date = datetime.now()
+
+2024-09-07 20:49:44.771948
+year-month-day time
+
+
