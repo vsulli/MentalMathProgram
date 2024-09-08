@@ -14,3 +14,17 @@ user_records = {'vsulli_add': [[1, 1, 5, '2024-09-06 20:52:30.462857'], [2, 1, 8
 shelve_file['user_records'] = user_records
 
 shelve_file.close()
+
+
+# retrieving data stored in the shelf file
+shelve_file = shelve.open('records2')
+
+print(user_records)
+print('-------------------')
+
+# retrieve the hashmap
+user_records = shelve_file['user_records']
+
+shelve_file.close()
+
+print(user_records)
