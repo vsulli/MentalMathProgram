@@ -52,6 +52,9 @@ category; time; problem; digits_1; digits_2
     https://docs.python.org/3/library/shelve.html
     * using a temp variable is faster and uses less memory than opening dict using writeback = True
 
+    https://stackoverflow.com/questions/28132751/shelve-db-type-could-not-be-determined
+    * need to save database before creating file?
+
 keys: A , S, M, D
 (if multiple digits, sort in ascending order - 1, 2  or 2, 1 for addition -> 'A1,2')
 value: list [time, num1, num2]

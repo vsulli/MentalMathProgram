@@ -113,7 +113,7 @@ def math_operation(symbol):
                 d_key = symbol + str(sorted_digits[0])+',' + str(sorted_digits[1])
                 # compare run to best time
                 # file, key, value[time, n1, n2]
-                modify_record('records.txt', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
+                modify_record('records2', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
 
             
             # incorrect answer
