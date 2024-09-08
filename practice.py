@@ -3,7 +3,7 @@
 import shelve
 from datetime import datetime, timedelta
 
-shelve_file = shelve.open("records2")
+shelve_file = shelve.open("records")
 
 # username: [[digits_1, digits_2, fastest_time, date_achieved]]
 vsulli_add = [[1, 1, 5, '2024-09-06 20:52:30.462857'], [2, 1, 8, '2024-09-05 20:52:30.462857']]
@@ -20,7 +20,7 @@ shelve_file.close()
 
 
 # retrieving data stored in the shelf file
-shelve_file = shelve.open('records2')
+shelve_file = shelve.open('records')
 
 
 # retrieve the hashmap
@@ -41,7 +41,7 @@ print(vsulli_div)
 shelve_file.close()
 
 # deleting data stored at a key
-shelve_file = shelve.open('records2')
+shelve_file = shelve.open('records')
 
 shelve_file['test'] = [1, 2, 3]
 
