@@ -69,8 +69,7 @@ value: list [time, num1, num2]
     multiplication
     division
 
-# store digits in order of highest to lowest?
-hashmap of user_records
+* *store digits in order of highest to lowest?
 
 username_add: [[digit_1,digit_2, fastest_time, date_achieved], [digit_1, digit_2, fastest_time, date_achieved]]
 username_sub:
@@ -84,3 +83,6 @@ current_date = datetime.now()
 year-month-day time
 
 
+*** need to update submenu to keep track of fastest time while solving
+then at the end of session update record given that digits are already stored
+DON'T DO AFTER EVERY QUESTION
