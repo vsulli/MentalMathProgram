@@ -38,6 +38,17 @@ shelve_file.sync()
 
 print(vsulli_div)
 
-
 shelve_file.close()
 
+# deleting data stored at a key
+shelve_file = shelve.open('records2')
+
+shelve_file['test'] = [1, 2, 3]
+
+print(f"Keys before deleting = {list(shelve_file.keys())}") 
+
+del shelve_file['test']
+
+print(f"Keys before deleting = {list(shelve_file.keys())}") 
+
+shelve_file.close()
