@@ -23,12 +23,21 @@ shelve_file.close()
 shelve_file = shelve.open('records2')
 
 
-print(f"Keys = {list(shelve_file.keys())}") 
-print('-------------------')
-
 # retrieve the hashmap
 vsulli_div = shelve_file['vsulli_div']
+
 print(vsulli_div)
+
+print('-------------------')
+
+# update the data
+vsulli_div[0][2] = 13
+
+# syncing makes changes permanent
+shelve_file.sync() 
+
+print(vsulli_div)
+
 
 shelve_file.close()
 
