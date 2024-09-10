@@ -144,6 +144,8 @@ def modify_record(file, key, value):
 def retrieve_record(file, key):
     record_dict = shelve.open(file)
     record = record_dict[key]
-    print(record)
+    for r in record:
+        print("Digits: " + str(r[0]) + "x" + str(r[1]) + " | Time(s): " + str(r[2]) + " | Date: " + r[3] + "\n" )
+    
     record_dict.close()
 

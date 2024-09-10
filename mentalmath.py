@@ -45,12 +45,33 @@ def main():
 
         # Records
         if sel_1 == 5:
-            submenus.retrieve_record('records.txt', 'A1,2') 
+            print("=============")
+            print("RECORDS")
+            print("=============")
+
+            print("ADDITION\n")
+            submenus.retrieve_record('records', 'vsulli_add')
+            print("--------------------------------------------------------")
+
+            print("\nSUBTRACTION\n")
+            submenus.retrieve_record('records', 'vsulli_sub')
+            print("--------------------------------------------------------")
+
+            print("\nMULTIPLICATION\n")
+            submenus.retrieve_record('records', 'vsulli_multi')
+            print("--------------------------------------------------------")
+
+            print("\nDIVISION\n")  
+            submenus.retrieve_record('records', 'vsulli_div')
+            print("--------------------------------------------------------")
+
             print(menu)
+            
         if sel_1 == 6:
             return
             
         sel_1 = input()
+
 
 
 main()
