@@ -129,6 +129,7 @@ def math_operation(symbol):
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
 
+# TODO change to keep track of fastest time, then update upon exit
 def modify_record(file, key, value):
     record_dict = shelve.open(file) 
     curr_val = record_dict[key]
