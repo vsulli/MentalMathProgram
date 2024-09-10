@@ -86,3 +86,5 @@ year-month-day time
 *** need to update submenu to keep track of fastest time while solving
 then at the end of session update record given that digits are already stored
 DON'T DO AFTER EVERY QUESTION
+
+*** need to update modify record function

@@ -6,7 +6,7 @@ import time
 
 # create function to create/ select user
 # load from file
-user = classes.User('test', 0, 0)
+user = classes.User('vsulli', 0, 0)
 
 # return a list
 def digit_sel()->list[int]:
@@ -56,6 +56,7 @@ def math_operation(symbol):
     correct_ans = None # change to none type to start?
     digits = []
     digits = digit_sel()
+    key = None
 
     while prompt.lower() != 'q':
 
@@ -68,15 +69,19 @@ def math_operation(symbol):
         if symbol == 'A':
             prompt = input(str(nums[0]) + ' + ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] + nums[1]
+            key = 'add'
         elif symbol == 'S':
             prompt = input(str(nums[0]) + ' - ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] - nums[1]
+            key = 'sub'
         elif symbol == 'M':
             prompt = input(str(nums[0]) + ' x ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] * nums[1]
+            key = 'multi'
         elif symbol == 'D':
             prompt = input(str(nums[0]) + ' / ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] / nums[1]
+            key = 'div'
         
         # matches negative number | negative number.number | number | number.number
         match = r"[-+]?\d*\.?\d+|[-+]?\d+"
@@ -109,11 +114,12 @@ def math_operation(symbol):
                 print('-----------------------')
 
                 sorted_digits = sorted(digits)
-                # A1,2
-                d_key = symbol + str(sorted_digits[0])+',' + str(sorted_digits[1])
+
+                # username_operation
+                d_key = str(user) + "_" + key
                 # compare run to best time
                 # file, key, value[time, n1, n2]
-                modify_record('records2', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
+                modify_record('records', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
 
             
             # incorrect answer
