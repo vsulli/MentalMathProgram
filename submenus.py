@@ -136,19 +136,31 @@ def math_operation(symbol):
 # TODO change to keep track of fastest time, then update upon exit
 def modify_record(file, key, value):
     record_dict = shelve.open(file) 
-    curr_val = record_dict[key]
-    print(curr_val)
+    curr_records = record_dict[key]
+    print(curr_records)
     # don't update if current record exists and has lower time
         # loop through all records
         # if same 1st and 2nd digit check time
         # if time is lower from best of this run, update
-    if curr_val[2] and float(curr_val[2]) < value[0]:
-        return
-    #when you open dict without writeback=True, have to do the following:
-    temp = record_dict[key]             # extracts the copy
-    temp.append(value)             # mutates the copy
-    record_dict[key] = temp             # stores the copy right back, to persist it
-    record_dict.close()
+    for i in range(len(curr_records)):
+        # if digits match
+        if curr_records[i][0] == value[0] and curr_records[i][1] == value[1]:
+            # if new time less than current time, update
+            if value[2] < curr_records[i][2]:
+                curr_records[i] = value
+                # syncing makes changes permanent
+                record_dict.sync() 
+                record_dict.close()
+        else:
+
+            # add new record for that key
+            #when you open dict without writeback=True, have to do the following:
+            temp = record_dict[key]             # extracts the copy
+            temp.append(value)             # mutates the copy
+            record_dict[key] = temp             # stores the copy right back, to persist it
+            # syncing makes changes permanent
+            record_dict.sync() 
+            record_dict.close()
 
 def retrieve_record(file, key):
     record_dict = shelve.open(file)

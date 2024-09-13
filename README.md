@@ -1,13 +1,9 @@
 # MENTAL MATH PROGRAM
 
 # TODO LIST
-- fix timer for submenu
-- add subtraction
-- add multiplication
-- add division
 - add try/catch - error handling
 - add user selection
-- format records.txt
+- ensure variable names and functions follow python rules
 
 category; time; problem; digits_1; digits_2
 * of digits in first number, # of digits in 2nd number
