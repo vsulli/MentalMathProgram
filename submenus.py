@@ -116,7 +116,7 @@ def math_operation(symbol):
                 sorted_digits = sorted(digits)
 
                 # username_operation
-                d_key = str(user) + "_" + key
+                d_key = str(user.u) + "_" + key
                 # compare run to best time
                 # file, key, value[time, n1, n2]
                 modify_record('records', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
@@ -133,8 +133,12 @@ def math_operation(symbol):
 def modify_record(file, key, value):
     record_dict = shelve.open(file) 
     curr_val = record_dict[key]
+    print(curr_val)
     # don't update if current record exists and has lower time
-    if curr_val[0] and curr_val[0] < value[0]:
+        # loop through all records
+        # if same 1st and 2nd digit check time
+        # if time is lower from best of this run, update
+    if curr_val[2] and float(curr_val[2]) < value[0]:
         return
     #when you open dict without writeback=True, have to do the following:
     temp = record_dict[key]             # extracts the copy

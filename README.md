@@ -88,4 +88,5 @@ then at the end of session update record given that digits are already stored
 DON'T DO AFTER EVERY QUESTIO
 
 
-** modify record to store which numbers were used?
+** modify record
+-- update to change record if fastest time better
