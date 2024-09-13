@@ -79,10 +79,13 @@ current_date = datetime.now()
 year-month-day time
 
 
-**** need to update submenu to keep track of fastest time while solving
-then at the end of session update record given that digits are already stored
-DON'T DO AFTER EVERY QUESTIO
+# Future Changes
+- GUI
+- add column to record for what problem was associated with that best time
+    - exclude 0's, 1's, and 2's 
+- mode that excludes typing in the answer for faster reviews -  "honor system" - type 1 for correct, 0 for incorrect
+- add decimals
+- add exponents
+- add square roots
 
 
-** modify record
--- currently not syncing changes to key
