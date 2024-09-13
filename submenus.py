@@ -92,7 +92,8 @@ def math_operation(symbol):
             print('==========================')
             print('Qs: ' + str(user.q)+'\n'+
                   'Correct: ' + str(user.c)+'\n'+
-                  str(round(user.c / user.q*100, 2))+'%')
+                  str(round(user.c / user.q*100, 2))+'%\n'+
+                  'Best Time: ' + str(round(b_time, 2)) + ' secs')
             print('==========================')
 
             # TODO update record for fastest time 
@@ -135,9 +136,9 @@ def math_operation(symbol):
 
 # TODO change to keep track of fastest time, then update upon exit
 def modify_record(file, key, value):
+    new_record = True
     record_dict = shelve.open(file) 
     curr_records = record_dict[key]
-    print(curr_records)
     # don't update if current record exists and has lower time
         # loop through all records
         # if same 1st and 2nd digit check time
@@ -145,22 +146,23 @@ def modify_record(file, key, value):
     for i in range(len(curr_records)):
         # if digits match
         if curr_records[i][0] == value[0] and curr_records[i][1] == value[1]:
+            new_record = False
             # if new time less than current time, update
-            if value[2] < curr_records[i][2]:
+            if float(value[2]) < curr_records[i][2]:
                 curr_records[i] = value
                 # syncing makes changes permanent
                 record_dict.sync() 
                 record_dict.close()
-        else:
-
-            # add new record for that key
-            #when you open dict without writeback=True, have to do the following:
-            temp = record_dict[key]             # extracts the copy
-            temp.append(value)             # mutates the copy
-            record_dict[key] = temp             # stores the copy right back, to persist it
-            # syncing makes changes permanent
-            record_dict.sync() 
-            record_dict.close()
+        
+    if new_record:
+        # add new record for that key if not in records
+        #when you open dict without writeback=True, have to do the following:
+        temp = record_dict[key]             # extracts the copy
+        temp.append(value)             # mutates the copy
+        record_dict[key] = temp             # stores the copy right back, to persist it
+        # syncing makes changes permanent
+        record_dict.sync() 
+        record_dict.close()
 
 def retrieve_record(file, key):
     record_dict = shelve.open(file)
