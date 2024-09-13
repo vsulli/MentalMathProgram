@@ -84,6 +84,7 @@ year-month-day time
 - add column to record for what problem was associated with that best time
     - exclude 0's, 1's, and 2's 
 - mode that excludes typing in the answer for faster reviews -  "honor system" - type 1 for correct, 0 for incorrect
+- add option for max number (possibly add column for settings and mode: all numbers, range (start - end), honor system/typed)
 - add decimals
 - add exponents
 - add square roots
