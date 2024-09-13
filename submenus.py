@@ -1,3 +1,4 @@
+from datetime import datetime
 import classes
 import random
 import re
@@ -53,6 +54,7 @@ def gen_rand_nums(digit_list)->list[int]:
 
 def math_operation(symbol):
     prompt = ''
+    b_time = float("inf")
     correct_ans = None # change to none type to start?
     digits = []
     digits = digit_sel()
@@ -93,6 +95,14 @@ def math_operation(symbol):
                   str(round(user.c / user.q*100, 2))+'%')
             print('==========================')
 
+            # TODO update record for fastest time 
+             # username_operation
+            d_key = str(user.u) + "_" + key
+            # compare run to best time
+            # file, key, value[n1, n2, best time, date]
+            sorted_digits = sorted(digits, reverse=True)
+            modify_record('records', d_key, [sorted_digits[0], sorted_digits[1], str(round(b_time, 2)), datetime.now()])
+        
             # reset values
             user.c = 0
             user.q = 0
@@ -112,14 +122,8 @@ def math_operation(symbol):
                 user.q += 1
                 print('Correct')
                 print('-----------------------')
-
-                sorted_digits = sorted(digits)
-
-                # username_operation
-                d_key = str(user.u) + "_" + key
-                # compare run to best time
-                # file, key, value[time, n1, n2]
-                modify_record('records', d_key, [str(round(stop_time - start_time, 2)),nums[0], nums[1]])
+                # update best time
+                b_time = min(b_time, stop_time - start_time)
 
             
             # incorrect answer
