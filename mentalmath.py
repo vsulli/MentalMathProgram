@@ -72,6 +72,4 @@ def main():
             
         sel_1 = input()
 
-
-
 main()
