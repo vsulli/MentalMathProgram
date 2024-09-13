@@ -1,4 +1,4 @@
-'vsulli_add', (0, 94)
+'vsulli_add', (0, 115)
 'vsulli_sub', (512, 94)
-'vsulli_multi', (1024, 94)
+'vsulli_multi', (1024, 99)
 'vsulli_div', (1536, 94)

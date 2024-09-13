@@ -85,4 +85,4 @@ DON'T DO AFTER EVERY QUESTIO
 
 
 ** modify record
--- update to change record if fastest time better
+-- currently not syncing changes to key

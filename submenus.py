@@ -97,12 +97,12 @@ def math_operation(symbol):
             print('==========================')
 
             # TODO update record for fastest time 
-             # username_operation
+             # username_operation for key
             d_key = str(user.u) + "_" + key
             # compare run to best time
             # file, key, value[n1, n2, best time, date]
             sorted_digits = sorted(digits, reverse=True)
-            modify_record('records', d_key, [sorted_digits[0], sorted_digits[1], str(round(b_time, 2)), datetime.now()])
+            modify_record('records', d_key, [sorted_digits[0], sorted_digits[1], str(round(b_time, 2)), str(datetime.now())])
         
             # reset values
             user.c = 0
@@ -148,8 +148,10 @@ def modify_record(file, key, value):
         if curr_records[i][0] == value[0] and curr_records[i][1] == value[1]:
             new_record = False
             # if new time less than current time, update
-            if float(value[2]) < curr_records[i][2]:
+            if float(value[2]) < float(curr_records[i][2]):
+                # change value for that entry
                 curr_records[i] = value
+                record_dict[key] = curr_records
                 # syncing makes changes permanent
                 record_dict.sync() 
                 record_dict.close()
@@ -168,6 +170,6 @@ def retrieve_record(file, key):
     record_dict = shelve.open(file)
     record = record_dict[key]
     for r in record:
-        print("Digits: " + str(r[0]) + "x" + str(r[1]) + " | Time: " + str(r[2]) + " secs | Date: " + r[3] + "\n")
+        print("Digits: " + str(r[0]) + "x" + str(r[1]) + " | Time: " + str(r[2]) + " secs | Date: " + str(r[3]) + "\n")
     record_dict.close()
 
