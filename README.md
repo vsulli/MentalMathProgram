@@ -5,6 +5,7 @@ problems - addition, subtraction, multiplication, and division.
 
 # Future Changes
 - add user selection
+- add ability to delete a record
 - GUI
 - add column to record for what problem was associated with that best time
     - exclude 0's, 1's, and 2's 
