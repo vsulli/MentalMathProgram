@@ -7,7 +7,10 @@ import time
 
 # create function to create/ select user
 # load from file
-user = classes.User('vsulli', 0, 0)
+def selectUser():
+    # change default user
+
+    user = classes.User('vsulli', 0, 0)
 
 # return a list
 def digit_sel()->list[int]:
