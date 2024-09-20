@@ -5,12 +5,7 @@ import re
 import shelve
 import time
 
-# create function to create/ select user
-# load from file
-def selectUser():
-    # change default user
-
-    user = classes.User('vsulli', 0, 0)
+user = classes.User('vsulli', 0, 0)
 
 # return a list
 def digit_sel()->list[int]:

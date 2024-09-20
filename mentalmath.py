@@ -8,7 +8,8 @@ problems
 import submenus
 
 def main():
-    menu = ("0) Select User 1) Addition\n2) Subtraction\n" +  
+
+    menu = ("1) Addition\n2) Subtraction\n" +  
     "3) Multiplication\n4) Division\n5) Records\n6) Quit")
     # for records - print fastest for each category
     print(menu)
@@ -16,16 +17,12 @@ def main():
 
     sel_1 = input()
     while sel_1 != 6:
-        if not sel_1.isdigit() or int(sel_1) not in range(0,7):
+        if not sel_1.isdigit() or int(sel_1) not in range(1,7):
             print('Please enter a valid int.')
             pass
 
         if sel_1.isdigit():
             sel_1 = int(sel_1)
-
-        # Select User
-        if sel_1 == 0:
-            
 
         # Addition
         if sel_1 == 1:
