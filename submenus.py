@@ -53,7 +53,7 @@ def gen_rand_nums(digit_list)->list[int]:
 def math_operation(symbol):
     prompt = ''
     b_time = float("inf")
-    correct_ans = None # change to none type to start?
+    correct_ans = None 
     digits = []
     digits = digit_sel()
     key = None
@@ -65,7 +65,6 @@ def math_operation(symbol):
         global start_time
         start_time = time.time()
 
-        #TODO input validation for letters
         if symbol == 'A':
             prompt = input(str(nums[0]) + ' + ' + str(nums[1]) + ' = \n')
             correct_ans = nums[0] + nums[1]
@@ -94,7 +93,6 @@ def math_operation(symbol):
                   'Best Time: ' + str(round(b_time, 2)) + ' secs')
             print('==========================')
 
-            # TODO update record for fastest time 
              # username_operation for key
             d_key = str(user.u) + "_" + key
             # compare run to best time
@@ -105,7 +103,6 @@ def math_operation(symbol):
             # reset values
             user.c = 0
             user.q = 0
-
             return
         
         elif sel[0]:
@@ -115,7 +112,6 @@ def math_operation(symbol):
 
             # correct answer
             # for division need to check if matches rounded to 1 decimal point
-            # TODO check this line - may not be getting correct selection with sel[0]?
             if float(sel[0]) == correct_ans or round(float(sel[0]), 2) == round(correct_ans, 2):
                 user.c += 1
                 user.q += 1
@@ -124,7 +120,6 @@ def math_operation(symbol):
                 # update best time
                 b_time = min(b_time, stop_time - start_time)
 
-            
             # incorrect answer
             else:
                 user.q += 1
@@ -132,7 +127,6 @@ def math_operation(symbol):
                 print('Correct Answer: ' + str(correct_ans))
                 print('-----------------------')
 
-# TODO change to keep track of fastest time, then update upon exit
 def modify_record(file, key, value):
     new_record = True
     record_dict = shelve.open(file) 
@@ -160,7 +154,6 @@ def modify_record(file, key, value):
         temp = record_dict[key]             # extracts the copy
         temp.append(value)             # mutates the copy
         record_dict[key] = temp             # stores the copy right back, to persist it
-        # syncing makes changes permanent
         record_dict.sync() 
         record_dict.close()
 

@@ -11,7 +11,6 @@ def main():
 
     menu = ("1) Addition\n2) Subtraction\n" +  
     "3) Multiplication\n4) Division\n5) Records\n6) Quit")
-    # for records - print fastest for each category
     print(menu)
     print('\n Please enter a selection: ')
 
