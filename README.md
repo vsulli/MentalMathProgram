@@ -17,6 +17,7 @@ problems - addition, subtraction, multiplication, and division.
 # Notes
 
 **Generation of digits for each range**
+
  10 raised to digit power
 - 1 digit ~ up to 9 (1 *0 to digit * 10 - 1)
 - 2 digits ~ 10 up to 99 (10^1 to 10^digit - 1)
@@ -39,6 +40,7 @@ current_date = datetime.now()
 year-month-day time
     
 **Records**
+
     Shelve - key is a string and data is any arbitrary object
     https://docs.python.org/3/library/shelve.html
     * using a temp variable is faster and uses less memory than opening dict using writeback = True
@@ -54,8 +56,11 @@ username_multi:
 username_div: 
 
 pickle vs shelve vs json
-pickle has some drawbacks: slow, unsafe (between sessions and programs), not language agnostic
-shelve allows you to access objects like a dictionary and store nearly any Python object, downside is that changing values requires you to assign them to the shelve again
+
+pickle: has some drawbacks slow, unsafe (between sessions and programs), not language agnostic
+
+shelve: allows you to access objects like a dictionary and store nearly any Python object, downside is that changing values requires you to assign them to the shelve again
+
 json: text file that anyone can read, secure (no holes between sessions or programs), downside is that in order to store some python objects you'd have to do extra work to conver to json and back
 
 If I were to start this project from scratch I woudl probably choose json instead of shelve due to it being more well-known, able to be modified by text and usable with more languages.
